@@ -1,0 +1,50 @@
+{
+  "name": "fm7-paddock",
+  "version": "1.0.0",
+  "description": "A simple app that retrive data from FM7",
+  "main": "index.js",
+  "homepage": "http://twitter.com/thegsbarreto",
+  "scripts": {
+    "start": "electron .",
+    "postinstall": "install-app-deps",
+    "pack": "build --dir",
+    "dist": "build"
+  },
+  "author": "Gabriel Barreto <gsbarretobr@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "express": "^4.16.4",
+    "jQuery": "^1.7.4"
+  },
+  "build": {
+    "appId": "FM7 Paddock",
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": "NSIS"
+    }
+  },
+  "devDependencies": {
+    "electron": "^4.0.6",
+    "electron-builder": "^20.38.5"
+  }
+}
